@@ -1,0 +1,26 @@
+
+<div class="grid-container">
+      <mat-spinner *ngIf="products.length === 0"></mat-spinner>
+      <mat-card *ngFor="let product of products" class="example-card">
+        <mat-card-header>
+          <mat-card-title>#{{product.id}} {{product.name}}</mat-card-title>
+          <mat-card-subtitle>{{product.price}} $/ {{product.quantity}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <img mat-card-image src="{{ product.imageUrl }}" alt="Photo of a Shiba Inu">
+            <p>{{product.description}}
+        </mat-card-content>
+        <mat-card-actions class="mt-3" >
+          <button class="actions"  mat-raised-button color="accent">Buy product</button>
+        </mat-card-actions>
+      </mat-card>
+</div>
+<div class="container-fluid">
+  <div class="example-button-row">
+      <button (click) ="firstPage()" mat-raised-button color="accent"> First</button>
+      <button (click) ="previousPage()" mat-raised-button color="accent"> Previous</button>
+      <button (click) ="nextPage()" mat-raised-button color="accent"> Next</button>
+      <button (click) ="lastPage()" mat-raised-button color="accent"> Last</button>
+  </div>
+</div>
+
